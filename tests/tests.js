@@ -55,6 +55,11 @@ test("Testing preLinkify string operations", function() {
             name: 'Long URL with characters around it',
             input: '"http://EXAMPLE.com/index.aspx?cid=ZBAQIkFnxZ0iG_uqMf3DXEoSxA--"',
             output: '"http://example.com/index.aspx?cid=ZBAQIkFnxZ0iG_uqMf3DXEoSxA--"'
+        },
+        {
+            name: 'Don\'t convert escaped HTML into HTML',
+            input: '&lt;strong&gt;Some text&lt;/strong&gt;\n<a href="#">A link</a>',
+            output: '&lt;strong&gt;Some text&lt;/strong&gt;\n<a href="#">A link</a>'
         }
     ];
 

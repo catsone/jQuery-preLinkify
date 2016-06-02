@@ -6,7 +6,7 @@
     };
 
     var PreLinkify = function(element) {
-        if (element.nodeType === 1) {
+        if (element.nodeType === window.Node.ELEMENT_NODE) {
             PreLinkify.correctNode.call(this, element);
         } else {
             PreLinkify.correctText.call(this, element.toString());
@@ -55,19 +55,19 @@
         childNode = node.firstChild;
 
         while (childNode) {
-            if (childNode.nodeType === 3) {
+            if (childNode.nodeType === window.Node.TEXT_NODE) {
                 while (dummyElement.firstChild) {
                     dummyElement.removeChild(dummyElement.firstChild);
                 }
 
-                dummyElement.innerHTML = PreLinkify.correctText(childNode.textContent || childNode.innerText || childNode.nodeValue);
+                dummyElement.textContent = PreLinkify.correctText(childNode.textContent);
 
                 children.push.apply(children, dummyElement.childNodes);
 
                 while (dummyElement.firstChild) {
                     dummyElement.removeChild(dummyElement.firstChild);
                 }
-            } else if (childNode.nodeType === 1) {
+            } else if (childNode.nodeType === window.Node.ELEMENT_NODE) {
                 children.push(PreLinkify.correctNode(childNode, dummyElement));
             } else {
                 children.push(childNode);
