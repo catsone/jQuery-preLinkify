@@ -19,3 +19,11 @@ gulp.task('qunit', function() {
 });
 
 gulp.task('test', ['connect', 'qunit']);
+
+gulp.task('dist', function () {
+    var uglify = require('gulp-uglify');
+
+    return gulp.src('src/jquery.prelinkify.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('dist'));
+});
