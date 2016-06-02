@@ -76,9 +76,9 @@ test ( "test preLinkify with linkify", function(assert) {
 
     assert.equal(
         $(paragraph).html(),
-        "This is an example body with <a href=\"http://google.com\" class=\"linkified\" target=\"_blank\">google.com</a> and <a href=\"http://google.com\" class=\"linkified\" target=\"_blank\">google.com</a>\n<a href=\"mailto:example@aol.com\" class=\"linkified\" target=\"_blank\">example@aol.com</a> " +
-        "<a href=\"mailto:example@aol.com\" class=\"linkified\" target=\"_blank\">example@aol.com</a> <a href=\"mailto:example@aol.com\" class=\"linkified\" target=\"_blank\">example@aol.com</a> <a href=\"mailto:Example@aol.com\" class=\"linkified\" target=\"_blank\">Example@aol.com</a> " +
-        "<a href=\"mailto:EXAMPLE@aol.com\" class=\"linkified\" target=\"_blank\">EXAMPLE@aol.com</a> as its contents.",
+        "This is an example body with <a href=\"http://google.com\" class=\"linkified\" target=\"_blank\">google.com</a> and <a href=\"http://google.com\" class=\"linkified\" target=\"_blank\">google.com</a>\n<a href=\"mailto:example@aol.com\" class=\"linkified\">example@aol.com</a> " +
+        "<a href=\"mailto:example@aol.com\" class=\"linkified\">example@aol.com</a> <a href=\"mailto:example@aol.com\" class=\"linkified\">example@aol.com</a> <a href=\"mailto:Example@aol.com\" class=\"linkified\">Example@aol.com</a> " +
+        "<a href=\"mailto:EXAMPLE@aol.com\" class=\"linkified\">EXAMPLE@aol.com</a> as its contents.",
         "Attempted preLinkify before running Linkify"
     );
 

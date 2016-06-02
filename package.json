@@ -7,5 +7,10 @@
     "type": "git",
     "url": "http://github.com/JoelLarson/jQuery-preLinkify.git"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.0.0",
+    "node-qunit-phantomjs": "^1.4.0"
+  }
 }
